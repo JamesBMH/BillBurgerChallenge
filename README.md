@@ -1,8 +1,8 @@
-# BillBurgerChallenge
+# Bill's Burger Challenge
 Burger restaurant program in Java to practice and display OOP programming, inheritance, composition, and polymorphism.
 This is part of a Udemy course on Java that I am doing.
 
-Challenge:
+## Challenge:
 Write an application for a food restaurant.
 
 Bill runs a fast-food hamburger restaurant and sells hamburger meals.
@@ -11,6 +11,7 @@ His meals are composed of three items, the hamburger, the drink, and the side it
 I need to write an application that lets Bill select the type of burgers and some of the additional
 items or extras that can be added to the burgers, as well as the actual pricing.
 
+```
 Need a meal order
     -This should be composed of exactly one burger, one drink, and one side item.
     -The most common meal order should be created without any arguments, like a regular burger, a small coke and fries, for example.
@@ -40,3 +41,4 @@ Each meal order functions
     -Change drink size
     -Print the itemized list. This should include the price of the burger, any extra toppings, the drink price based on size, and the side item price.
     -Print the total due amount of the meal.
+```
