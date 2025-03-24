@@ -1,5 +1,5 @@
 # Bill's Burger Challenge
-Burger restaurant program in Java to practice and display OOP programming, inheritance, composition, and polymorphism.
+Burger restaurant program in Java to practice and display OOP programming, inheritance, composition, and polymorphism as well as give the version control in Intellij Idea a spin.
 This is part of a Udemy course on Java that I am doing.
 
 ## Challenge:

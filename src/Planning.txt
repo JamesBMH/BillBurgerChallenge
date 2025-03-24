@@ -1,0 +1,46 @@
+Challenge specifications:
+
+Meal order
+ -Hamburger x1
+ -Drink x1
+ -Side item x1
+ -Needs default meal order hamburger, drink, default side item (fries),
+  constructor with no arguments
+ -Specify meal order (overload constructor)
+
+Drink
+ -Type
+ -Size
+ -Price based on size
+
+Side item
+ -Type
+ -Price
+
+Burgers
+ -Type
+ -Base price
+ -Max 3 extra toppings
+ -Constructor(type, price)
+ -Add toppings function
+ --Priced according to topping type
+ -Deluxe burger meal
+ --Set price
+ --Additional toppings do not alter price
+ --Additional two toppings (x5 possible toppings total)
+
+Main method
+ -Default meal constructor with no arguments
+ -Meal with burger, drink, and side item of my choice
+ --Up to 3 extra toppings
+ -Deluxe burger meal where all items, drink, side item, and up to 5 extra toppings are included in the burger price.
+
+Meal order in main method
+ -Add some additional toppings to the burger
+ -Change size of the drink
+ -Print itemized list
+ --Price of burger
+ --Extra toppings
+ --Drink price based on size
+ --Side item price
+ -Print total due amount for meal
