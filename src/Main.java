@@ -23,5 +23,13 @@ public class Main {
         deluxeBurger.addTopping("Gherkins", 2.99);
 
         System.out.println(deluxeBurger.toString());
+
+        Drink defaultDrink = new Drink();
+        System.out.println(defaultDrink.toString());
+
+        Drink drink = new Drink("Fanta", "l");
+        System.out.println(drink.toString());
+        drink.changeSize("s");
+        System.out.println(drink.toString());
     }
 }

@@ -7,18 +7,19 @@ public class Burger {
     public Burger(String type, double price){
         this.type = type;
         this.price = price;
+        this.totalPrice = price;
     }
 
     public void addTopping(String type, double price){
         if (topping1 == null){
             topping1 = new Topping(type, price);
-            this.price += price;
+            this.totalPrice += price;
         } else if (topping2 == null) {
             topping2 = new Topping(type, price);
-            this.price += price;
+            this.totalPrice += price;
         } else if (topping3 == null) {
             topping3 = new Topping(type, price);
-            this.price += price;
+            this.totalPrice += price;
         } else {
             System.out.println("No more toppings allowed.");
         }
@@ -39,11 +40,17 @@ public class Burger {
         if (!(topping3 == null)){
             output += topping3.toString();
         }
+
+        if (totalPrice != price) {
+            output += String.format("Burger total with toppings: R%.2f%n", totalPrice);
+        }
+
         return output;
     }
 
     protected String type;
     protected double price;
+    private double totalPrice;
     protected Topping topping1 = null;
     protected Topping topping2 = null;
     protected Topping topping3 = null;
@@ -60,7 +67,7 @@ class Topping {
     public String toString() {
         String output = "";
         output += String.format(" Topping: %s%n", type);
-        output += String.format("  Price: %.2f%n", price);
+        output += String.format("  Price: R%.2f%n", price);
         return output;
     }
 
@@ -104,7 +111,6 @@ class DeluxeBurger extends Burger {
         String output = "";
 
         output += String.format("Burger: %s%n", type);
-        output += String.format("  Price: R%.2f%n", price);
 
         if (!(topping1 == null)){
             output += topping1.toStringDeluxe();
@@ -121,6 +127,8 @@ class DeluxeBurger extends Burger {
         if (!(topping5 == null)){
             output += topping5.toStringDeluxe();
         }
+
+        output += String.format("Burger total: R%.2f%n", price);
 
         return output;
     }
