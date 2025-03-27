@@ -31,5 +31,11 @@ public class Main {
         System.out.println(drink.toString());
         drink.changeSize("s");
         System.out.println(drink.toString());
+
+        SideItem sideItem = new SideItem();
+        System.out.println(sideItem.toString());
+
+        SideItem customSideItem = new SideItem("Potato", 15.99);
+        System.out.println(customSideItem.toString());
     }
 }
