@@ -1,41 +1,37 @@
 public class Main {
     public static void main(String[] args) {
-        Burger burger = new Burger();
-        System.out.println(burger.toString());
+        MealOrder mealOrder = new MealOrder();
+        System.out.print(mealOrder.toString());
 
-        Burger CheeseBurger = new Burger("Cheese Burger", 55.45);
-        CheeseBurger.addTopping("Cheese", 3.99);
-        CheeseBurger.addTopping("Gherkins", 2.99);
-        CheeseBurger.addTopping("Onions", 4.37);
-        // Should complain about this 4'th topping
-        CheeseBurger.addTopping("Mayo", 1.49);
+        Burger burger = new Burger("Chicken Burger", 49.99);
+        Drink drink = new Drink("Pepsi", "L");
+        SideItem sideItem = new SideItem("Baked Potato", 14.99);
 
-        System.out.println(CheeseBurger.toString());
+        MealOrder customMealOrder = new MealOrder(burger, drink, sideItem);
+        System.out.print(customMealOrder.toString());
+
+        customMealOrder.addToppings("Mayo", 2.99);
+        customMealOrder.addToppings("Gherkins", 0.99);
+        System.out.print(customMealOrder.toString());
+
+        customMealOrder.changeDrinkSize("S");
+        System.out.print(customMealOrder.toString());
 
         Burger deluxeBurger = new DeluxeBurger();
+        Drink deluxeDrink = new Drink("Mountain dew", "L");
+        SideItem deluxeSideItem = new SideItem("Salad", 6.99);
 
-        deluxeBurger.addTopping("Cheese", 3.99);
-        deluxeBurger.addTopping("Onions", 2.99);
-        deluxeBurger.addTopping("Relish", 2.75);
-        deluxeBurger.addTopping("BBQ Sauce", 4.99);
-        deluxeBurger.addTopping("Mayo", 1.49);
-        // Should complain about 6'th topping
-        deluxeBurger.addTopping("Gherkins", 2.99);
+        MealOrder deluxeMealOrder = new MealOrder(deluxeBurger, deluxeDrink, deluxeSideItem);
+        System.out.print(deluxeMealOrder.toString());
 
-        System.out.println(deluxeBurger.toString());
+        deluxeMealOrder.addToppings("Mayo", 2.99);
+        deluxeMealOrder.addToppings("Gherkins", 0.99);
+        deluxeMealOrder.addToppings("Tuna", 3.99);
+        deluxeMealOrder.addToppings("Ketchup", 2.99);
 
-        Drink defaultDrink = new Drink();
-        System.out.println(defaultDrink.toString());
+        System.out.print(deluxeMealOrder.toString());
 
-        Drink drink = new Drink("Fanta", "l");
-        System.out.println(drink.toString());
-        drink.changeSize("s");
-        System.out.println(drink.toString());
-
-        SideItem sideItem = new SideItem();
-        System.out.println(sideItem.toString());
-
-        SideItem customSideItem = new SideItem("Potato", 15.99);
-        System.out.println(customSideItem.toString());
+        deluxeMealOrder.changeDrinkSize("S");
+        System.out.print(deluxeMealOrder.toString());
     }
 }

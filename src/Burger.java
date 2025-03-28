@@ -2,6 +2,7 @@ public class Burger {
     public Burger(){
         this.type = "Cheese Burger";
         this.price = 44.99;
+        this.totalPrice = this.price;
     }
 
     public Burger(String type, double price){
@@ -13,12 +14,15 @@ public class Burger {
     public void addTopping(String type, double price){
         if (topping1 == null){
             topping1 = new Topping(type, price);
+            System.out.println(topping1.getType() + " added!");
             this.totalPrice += price;
         } else if (topping2 == null) {
             topping2 = new Topping(type, price);
+            System.out.println(topping2.getType() + " added!");
             this.totalPrice += price;
         } else if (topping3 == null) {
             topping3 = new Topping(type, price);
+            System.out.println(topping3.getType() + " added!");
             this.totalPrice += price;
         } else {
             System.out.println("No more toppings allowed.");
@@ -48,6 +52,10 @@ public class Burger {
         return output;
     }
 
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
     protected String type;
     protected double price;
     private double totalPrice;
@@ -62,6 +70,10 @@ class Topping {
     public Topping(String type, double price) {
         this.type = type;
         this.price = price;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String toString() {
@@ -86,21 +98,26 @@ class Topping {
 class DeluxeBurger extends Burger {
     public DeluxeBurger() {
         type = "Deluxe Burger";
-        price = 79.99;
+        price = 89.99;
     }
 
     @Override
     public void addTopping(String type, double price) {
         if (topping1 == null){
             topping1 = new Topping(type, price);
+            System.out.println(topping1.getType() + " added!");
         } else if (topping2 == null) {
             topping2 = new Topping(type, price);
+            System.out.println(topping2.getType() + " added!");
         } else if (topping3 == null) {
             topping3 = new Topping(type, price);
+            System.out.println(topping3.getType() + " added!");
         } else if (topping4 == null) {
             topping4 = new Topping(type, price);
+            System.out.println(topping4.getType() + " added!");
         } else if (topping5 == null) {
             topping5 = new Topping(type, price);
+            System.out.println(topping5.getType() + " added!");
         } else {
             System.out.println("No more toppings allowed.");
         }
@@ -131,6 +148,11 @@ class DeluxeBurger extends Burger {
         output += String.format("Burger total: R%.2f%n", price);
 
         return output;
+    }
+
+    @Override
+    public double getTotalPrice() {
+        return price;
     }
 
     private Topping topping4 = null;

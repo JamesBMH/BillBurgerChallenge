@@ -25,7 +25,7 @@ public class Drink {
     public String toString() {
         String output = "";
 
-        output += String.format("Drink type: %s%n", type);
+        output += String.format("Drink: %s%n", type);
 
         if ("sS".contains(size)){
             output += String.format(" Size: Small%n");
@@ -38,6 +38,10 @@ public class Drink {
         output += String.format("  Price: R%.2f%n", price);
 
         return output;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     private String type;
